@@ -40,16 +40,16 @@ export class ReservaComponent implements OnInit {
   }
 
   reservar(formReserva, reservaModal){
-    this._router.navigate(['reservaHabitacion',this.codigoHabitacion, this.fechaIngreso, this.fechaSalida, this.cliente.cedula, this.cliente.nombre, this.cliente.apellido, this.cliente.email]);
+    //this._router.navigate(['reservaHabitacion',this.codigoHabitacion, this.fechaIngreso, this.fechaSalida, this.cliente.cedula, this.cliente.nombre, this.cliente.apellido, this.cliente.email]);
 // **********************************************
-  /* this._clienteService.registrarCliente(this.cliente).subscribe(
+  this._clienteService.registrarCliente(this.cliente).subscribe(
      response => {
-       this._router.navigate(['reservaHabitacion',this.codigoHabitacion, this.fechaIngreso, this.fechaSalida, this.response.cedula, this.response.nombre, this.response.apellido, this.response.email]);
+       this._router.navigate(['reservaHabitacion',this.codigoHabitacion, this.fechaIngreso, this.fechaSalida, response.cedula, response.nombre, response.apellido, response.email]);
        this.fechaIngreso = '';
        this.fechaSalida = '';
        formReserva.reset();
      }
-   );*/
+   );
 //**********************************
   }
 }

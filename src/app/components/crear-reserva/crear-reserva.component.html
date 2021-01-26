@@ -34,7 +34,7 @@
   <section class="contenedor contenedor-2">
     <div class="mensaje-reserva">
       <h1>RESERVA CREADA EXITOSAMENTE</h1>
-      <h2>La reserva se realizó a nombre de la persona con cédula {{ reserva.cedulaCliente }}</h2>
+      <h2>La reserva se realizó a nombre de la persona con cédula {{ reserva.cedulaCliente }}, con código {{ codigoReserva }}</h2>
       <button [routerLink]="['/consulta']" type="button" class="btn btn-dark">Regresar a consultar tu reserva</button>
 
     </div>

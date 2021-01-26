@@ -53,13 +53,13 @@ export class CrearReservaComponent implements OnInit {
     this.bandera = true;
     this.codigoReserva = '12345679';
     this.bandera2=false;
-    /*
+    
     this._reservaService.registrarReservar(this.reserva).subscribe(
       response => {
         this.codigoReserva = response.codigoReserva;
         this.bandera = true;
       }
     );
-    */
+    
   }
 }
