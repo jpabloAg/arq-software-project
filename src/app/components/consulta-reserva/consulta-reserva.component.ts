@@ -15,7 +15,7 @@ export class ConsultaReservaComponent implements OnInit {
   public fechaIngreso:any;
   public fechaSalida:any;
   constructor(private _reservaService:ReservaService,
-              private _modalService:NgbModal, private _router:Router) { 
+              private _modalService:NgbModal, private _router:Router) {
     this.codigoReserva = '';
   }
 
@@ -23,12 +23,12 @@ export class ConsultaReservaComponent implements OnInit {
   }
 
   buscarReserva(){
-  
+
     this._reservaService.buscarReserva(this.codigoReserva).subscribe(
       response => {
         this.reserva = response;
       }
-    )
+    );
   }
 
   eliminarReserva(deleteModal){

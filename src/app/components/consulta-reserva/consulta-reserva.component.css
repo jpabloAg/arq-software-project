@@ -11,12 +11,13 @@
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
+    text-align: center;
 }
 
 .contenedor-sobre-nosotros{
     display: flex;
     justify-content: space-evenly;
-} 
+}
 
 .form-field {
     text-align: center;
@@ -34,7 +35,7 @@
   .consultar {
     padding: 12px 10px;
     border: 0;
-    background: linear-gradient(to right, #000 0%,#666 100%); 
+    background: linear-gradient(to right, #000 0%,#666 100%);
     border-radius: 3px;
     margin-top: 10px;
     color: #fff;
@@ -47,7 +48,7 @@
 .cambios{
     width:470px;
 }
-  
+
   .form-field:focus {
     border-color: #0f7ef1;
   }
@@ -165,3 +166,10 @@ footer{
     }
 }
 
+hr{
+  width: 4%;
+  margin: 50px auto;
+  border-width: 8px;
+  border-color: grey;
+  border-style:dotted none none none;
+}

@@ -1,0 +1,48 @@
+<button type="button" name="button" (click)='reservar()'>Reservar ahora</button>
+
+
+<div *ngIf='bandera' class="">
+  <h1 >RESERVA CREADA EXITOSAMENTE</h1>
+  <header>
+      <nav>
+          <a [routerLink]="['/']">Home</a>
+          <a href="#">Acerca de</a>
+          <a href="#">Servicios</a>
+          <a [routerLink]="['/hospedajes']">Hospedajes</a>
+          <a [routerLink]="['/consulta']">Consulta tu reserva</a>
+          <a href="#">Contacto</a>
+      </nav>
+      <section class="textos-header">
+          <h1>ANTON & LILY</h1>
+          <h2>A home away from home!</h2>
+      </section>
+      <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+  </header>
+
+  <section class="contenedor">
+      <h2 class="titulo">Que dicen nuestros clientes</h2>
+
+  </section>
+
+
+
+
+
+  <footer>
+    <div class="contenedor-footer">
+      <div class="content-foo">
+        <h4>Phone</h4>
+        <p>3205132681</p>
+      </div>
+      <div class="content-foo">
+        <h4>Email</h4>
+        <p>anton&lily@gmail.com</p>
+      </div>
+      <div class="content-foo">
+        <h4>Location</h4>
+        <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+      </div>
+    </div>
+    <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+  </footer>
+</div>

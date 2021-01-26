@@ -15,6 +15,8 @@ import { ReservaComponent } from './components/reserva/reserva.component';
 import { ConsultaComponent } from './components/consulta/consulta.component';
 import { ConsultaClienteComponent } from './components/consulta-cliente/consulta-cliente.component';
 import { ConsultaReservaComponent } from './components/consulta-reserva/consulta-reserva.component';
+import { CrearReservaComponent } from './components/crear-reserva/crear-reserva.component';
+import { PasarelaComponent } from './components/pasarela/pasarela.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { ConsultaReservaComponent } from './components/consulta-reserva/consulta
     ReservaComponent,
     ConsultaComponent,
     ConsultaClienteComponent,
-    ConsultaReservaComponent
+    ConsultaReservaComponent,
+    CrearReservaComponent,
+    PasarelaComponent
   ],
   imports: [
     BrowserModule,

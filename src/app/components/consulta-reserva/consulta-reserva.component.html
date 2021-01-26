@@ -1,81 +1,103 @@
+<head>
+  <meta charset="utf-8">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
 <section class="contenedor sobre-nosotros">
-    <h2 class="titulo">Ingrese el código de la reserva</h2>
-    <div class="contenedor-sobre-nosotros">
-        <div class="contenido-textos">
-            <form action="" class="form" #formReserva>
-                <input type="text" class="form-field" placeholder="Código de reserva"  [(ngModel)]="codigoReserva" [ngModelOptions]="{standalone: true}" required>
-                <button class="consultar" (click)="buscarReserva()">Consultar</button>
-            </form>    
-        </div>
+  <h2 class="titulo">Ingrese el código de la reserva</h2>
+  <div class="contenedor-sobre-nosotros">
+    <div class="contenido-textos">
+      <form action="" class="form" #formReserva>
+        <input type="text" class="form-field" placeholder="Código de reserva" [(ngModel)]="codigoReserva" [ngModelOptions]="{standalone: true}" required>
+        <button class="consultar" (click)="buscarReserva()">Consultar</button>
+      </form>
     </div>
+  </div>
 </section>
 
 <section class="response" *ngIf="reserva">
-    <div class="contenedor">
-        <h3><strong>Código de la reserva:</strong> {{ reserva.codigoReserva }}</h3>
-        <h3><strong>Documento de identificación del responsable:</strong> {{ reserva.cedulaCliente }}</h3>
-        <h3><strong>Número de la habtiación:</strong> {{ reserva.numeroHabitacion }}</h3>
-        <h3><strong>Fecha de ingreso:</strong> {{ reserva.fechaIngreso }}</h3>
-        <h3><strong>Fecha de salida:</strong> {{ reserva.fechaSalida }}</h3>
-        <button class="consultar" (click)="eliminarReserva(deleteModal)">Eliminar reserva</button>
-        <button class="consultar" (click)="mostrarModalUpdate(updateModal)">Actualizar reserva</button>
-    </div>
+  <div class="contenedor">
+
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Código de la reserva</th>
+          <th scope="col">Documento de identificación del responsable</th>
+          <th scope="col">Número de la habitación</th>
+          <th scope="col">Fecha de ingreso</th>
+          <th scope="col">Fecha de salida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ reserva.codigoReserva }}</th>
+          <td>{{ reserva.cedulaCliente }}</td>
+          <td>{{ reserva.numeroHabitacion }}</td>
+          <td>{{ reserva.fechaIngreso }}</td>
+          <td>{{ reserva.fechaSalida }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <hr>
+    <button class="consultar" (click)="eliminarReserva(deleteModal)">Eliminar reserva</button>
+    <button class="consultar" (click)="mostrarModalUpdate(updateModal)">Actualizar reserva</button>
+  </div>
 </section>
 
 <ng-template #deleteModal>
-    <div class="modal-header">
-        <h2 class="modal-title text-center">Reserva Cancelada exitosamente!</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        Se ha eliminado la reserva con código <strong>{{ reservaElminada.codigoReserva }}</strong> al cliente con número de identificacion <strong>{{ reservaElminada.cedulaCliente }}</strong> en la aplicación de Anton & Lily.
-    </div>
+  <div class="modal-header">
+    <h2 class="modal-title text-center">Reserva Cancelada exitosamente!</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Se ha eliminado la reserva con código <strong>{{ reservaElminada.codigoReserva }}</strong> al cliente con número de identificacion <strong>{{ reservaElminada.cedulaCliente }}</strong> en la aplicación de Anton & Lily.
+  </div>
 </ng-template>
 
 <ng-template #updateModal>
-    <div class="modal-header">
-        <h2 class="modal-title text-center">Puedes cambiar las fechas de tu estadía y ajustarte a lo que mejor te convenga</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <form>
-            <div class="form-group">
-                <label for="fechaingreso">Fecha de ingreso</label>
-                <input type="text" name="fechaingreso" bsDatepicker class="form-control"
-                    [(ngModel)]="fechaIngreso">
-            </div>
-            <hr>
-            <div class="form-group">
-                <label for="fechasalida">Fecha de Salida</label>
-                <input type="text" name="fechasalida" bsDatepicker class="form-control"
-                    [(ngModel)]="fechaSalida">
-            </div>
-            <hr>
-            <div class="form-group">
-                <button class="consultar cambios" (click)="actualizarReserva(reserva)">Guardar Cambios</button>
-            </div>
-        </form>
-    </div>
+  <div class="modal-header">
+    <h2 class="modal-title text-center">Puedes cambiar las fechas de tu estadía y ajustarte a lo que mejor te convenga</h2>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="fechaingreso">Fecha de ingreso</label>
+        <input type="text" name="fechaingreso" bsDatepicker class="form-control" [(ngModel)]="fechaIngreso">
+      </div>
+      <hr>
+      <div class="form-group">
+        <label for="fechasalida">Fecha de Salida</label>
+        <input type="text" name="fechasalida" bsDatepicker class="form-control" [(ngModel)]="fechaSalida">
+      </div>
+      <hr>
+      <div class="form-group">
+        <button class="consultar cambios" (click)="actualizarReserva(reserva)">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
 </ng-template>
 
 <footer>
-    <div class="contenedor-footer">
-        <div class="content-foo">
-            <h4>Phone</h4>
-            <p>3205132681</p>
-        </div>
-        <div class="content-foo">
-            <h4>Email</h4>
-            <p>anton&lily@gmail.com</p>
-        </div>
-        <div class="content-foo">
-            <h4>Location</h4>
-            <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
-        </div>  
+  <div class="contenedor-footer">
+    <div class="content-foo">
+      <h4>Phone</h4>
+      <p>3205132681</p>
     </div>
-    <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+    <div class="content-foo">
+      <h4>Email</h4>
+      <p>anton&lily@gmail.com</p>
+    </div>
+    <div class="content-foo">
+      <h4>Location</h4>
+      <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+    </div>
+  </div>
+  <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
 </footer>
