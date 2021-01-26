@@ -1,48 +1,61 @@
-<button type="button" name="button" (click)='reservar()'>Reservar ahora</button>
+<head>
+  <meta charset="utf-8">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
+
+<header>
+  <nav>
+    <a [routerLink]="['/']">Home</a>
+    <a href="#">Acerca de</a>
+    <a href="#">Servicios</a>
+    <a [routerLink]="['/hospedajes']">Hospedajes</a>
+    <a [routerLink]="['/consulta']">Consulta tu reserva</a>
+    <a href="#">Contacto</a>
+  </nav>
+  <section class="textos-header">
+    <h1>ANTON & LILY</h1>
+    <h2>A home away from home!</h2>
+  </section>
+  <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+      <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
+    </svg></div>
+</header>
+
+<section *ngIf='bandera2'class="contenedor contenedor-1">
+  <div class="mensaje-reserva">
+    <h2>Recuerde que debe realizar el pago antes de su fecha de ingreso. Está seguro que desea continuar?</h2>
+    <button class="btn btn-dark" type="button" name="button" (click)='reservar()'>Reservar ahora</button>
+  </div>
+</section>
 
 <div *ngIf='bandera' class="">
-  <h1 >RESERVA CREADA EXITOSAMENTE</h1>
-  <header>
-      <nav>
-          <a [routerLink]="['/']">Home</a>
-          <a href="#">Acerca de</a>
-          <a href="#">Servicios</a>
-          <a [routerLink]="['/hospedajes']">Hospedajes</a>
-          <a [routerLink]="['/consulta']">Consulta tu reserva</a>
-          <a href="#">Contacto</a>
-      </nav>
-      <section class="textos-header">
-          <h1>ANTON & LILY</h1>
-          <h2>A home away from home!</h2>
-      </section>
-      <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
-  </header>
+  <section class="contenedor contenedor-2">
+    <div class="mensaje-reserva">
+      <h1>RESERVA CREADA EXITOSAMENTE</h1>
+      <h2>La reserva se realizó a nombre de la persona con cédula {{ reserva.cedulaCliente }}</h2>
+      <button [routerLink]="['/consulta']" type="button" class="btn btn-dark">Regresar a consultar tu reserva</button>
 
-  <section class="contenedor">
-      <h2 class="titulo">Que dicen nuestros clientes</h2>
-
+    </div>
   </section>
 
-
-
-
-
-  <footer>
-    <div class="contenedor-footer">
-      <div class="content-foo">
-        <h4>Phone</h4>
-        <p>3205132681</p>
-      </div>
-      <div class="content-foo">
-        <h4>Email</h4>
-        <p>anton&lily@gmail.com</p>
-      </div>
-      <div class="content-foo">
-        <h4>Location</h4>
-        <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
-      </div>
-    </div>
-    <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
-  </footer>
 </div>
+
+<footer>
+  <div class="contenedor-footer">
+    <div class="content-foo">
+      <h4>Phone</h4>
+      <p>3205132681</p>
+    </div>
+    <div class="content-foo">
+      <h4>Email</h4>
+      <p>anton&lily@gmail.com</p>
+    </div>
+    <div class="content-foo">
+      <h4>Location</h4>
+      <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+    </div>
+  </div>
+  <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+</footer>

@@ -122,4 +122,11 @@ footer{
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
+    align-items: center;
+    align-content: center;
+}
+.mensaje-reserva{
+border-style: solid;
+padding: 20px;
+text-align: center;
 }

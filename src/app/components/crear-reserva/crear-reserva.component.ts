@@ -10,6 +10,7 @@ import { Reserva } from 'src/app/modelos/reserva';
 })
 export class CrearReservaComponent implements OnInit {
   bandera:boolean;
+  bandera2:boolean;
 
   public codigoHabitacion:string;
   public fechaIngreso:string;
@@ -29,6 +30,7 @@ export class CrearReservaComponent implements OnInit {
       cedulaCliente:''
     };
     this.bandera=false;
+    this.bandera2=true;
     this.codigoReserva = '';
   }
 
@@ -50,6 +52,7 @@ export class CrearReservaComponent implements OnInit {
     this.reserva.cedulaCliente = this.cedula;
     this.bandera = true;
     this.codigoReserva = '12345679';
+    this.bandera2=false;
     /*
     this._reservaService.registrarReservar(this.reserva).subscribe(
       response => {
